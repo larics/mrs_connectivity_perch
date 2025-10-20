@@ -1,0 +1,11 @@
+origin:
+  x: -2.0
+  y: -1.0
+resolution: 0.02666666666666667
+sector_size: 1.0
+x_range:
+  max: 2.0
+  min: -2.0
+y_range:
+  max: 5.0
+  min: -1.0

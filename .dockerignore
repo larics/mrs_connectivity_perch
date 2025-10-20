@@ -1,0 +1,24 @@
+# Docker files
+Dockerfile
+docker-compose.yml
+
+# Docker volumes and containers
+.dockerignore
+
+# Keep existing gitignore content
+*.pyc
+__pycache__
+.idea/
+
+/hero_sim/tests/data/
+/hero_sim/tests/As/
+
+/env/
+/venv/
+hero_sim.egg-info/
+
+.env
+README_dynamic_system.md
+server.log
+logs/
+simulation_data/

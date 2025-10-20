@@ -1,0 +1,10 @@
+origin:
+  x: -5.0
+  y: -5.0
+resolution: 0.05
+x_range:
+  max: 5.0
+  min: -5.0
+y_range:
+  max: 5.0
+  min: -5.0

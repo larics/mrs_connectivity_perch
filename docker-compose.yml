@@ -1,0 +1,18 @@
+services:
+  mrs_connectivity_perch:
+    build: .
+    container_name: mrs_connectivity_perch_container
+    volumes:
+      - .:/app  # Mount current directory for development
+      - ./logs:/app/logs  # Persist logs
+      - ./simulation_data:/app/simulation_data  # Persist simulation data
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw  # X11 forwarding
+    environment:
+      - DISPLAY=${DISPLAY}  # Forward display
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - MPLBACKEND=TkAgg  # TkAgg backend for matplotlib
+    network_mode: "host"  # Use host networking for X11
+    stdin_open: true
+    tty: true
+    command: /bin/bash

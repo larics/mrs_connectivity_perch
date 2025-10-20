@@ -1,0 +1,90 @@
+# Environment Configuration
+env: Perch-v0  # Name of the environment
+map_name: map_hero_v1  # Map name used in the environment
+
+# Visibility radius of each agent
+vis_radius: 2.2
+# Time step for the simulation
+dt: 0.1  # seconds
+
+agent_config:
+
+  UAV:                            
+    num_agents: 2
+    controller_type: connectivity_controller
+    obstacle_avoidance: 1   # Flag to enable or disable obstacle avoidance
+    # init_position: [[-0.214,0.734],[0.567,1.431],[-0.467,2.141],[0.686,2.708],[-0.222,3.298],[0.092,0.906],[0.192,2.014],[0.167,2.8]]
+    speed: 0.5
+    init_battery: [0.7,0.85]
+    battery_decay_rate: 0.0001
+    init_formation:         # Spawn agents as a formation (see options in documentation)
+      shape: Circle
+      origin: [0.0,0.0]
+      radius: 0.5
+    decay_select: [0,1,2,3,4,5]
+    obs_radius: 0.5
+
+  perching_pos:
+    num_agents: 2
+    controller_type: do_not_move
+    init_position: [[-0.8,0.5],[0.8,1.0]]
+    obstacle_avoidance: 1  
+
+  base:
+    num_agents: 1
+    controller_type: do_not_move
+    init_position: [[0.0, 0.0]]
+    obstacle_avoidance: 1
+
+  robot:
+    num_agents: 1
+    controller_type: path_tracker
+    path_planner: rrt  # rrt or astar, use rrt for exploration!
+    init_position: [[0.0, 0.0]]  
+    obstacle_avoidance: 1
+    speed: 0.03
+    sensor_radius: 2.2  # Must have for exploration
+    paths:      # Must match number of agents
+      0:
+        shape: Line
+        origin: [0.0, 0.0]
+        end: [0.0, 4.0]
+        num_points: 250
+
+
+# ___________________ Controller Parameters ___________________
+# Parameters for the connectivity_controller
+controller_params:
+  delta: 0.2  # Variance control for connectivity controller
+  repelThreshold: 0.6  # Threshold ratio for repulsion
+  battery_aware: 0  # Whether the controller is battery aware (0: No, 1: Yes)
+  normalized: 0  # Whether the values are normalized (0: No, 1: Yes)
+  epsilon: 0.01  # Small constant for stability
+  gainConnectivity: 1.0  # Gain for connectivity control
+  gainRepel: 0.04  # Gain for repulsion
+  unweighted: 1  # Use unweighted control (0: No, 1: Yes)
+  v_max: 1.0  # Maximum velocity of the agents
+  critical_battery_level: 0.14  # Threshold for critical battery level
+  tau: 0.05  # Time constant for controller
+  speed: 1.0  # Speed of the agents in controller
+  
+  # Random walk parameters
+  random_walk_min_distance: 2.5  # Minimum distance for random walk goals
+  random_walk_max_distance: 3.5  # Maximum distance for random walk goals
+
+
+
+#_______________  LATER  ________________
+
+# Data logging configuration (optional)
+data_logging:
+  enabled: false              # Set to false to disable all data logging
+  log_timestep_data: true    # Log detailed agent data each timestep
+  log_fiedler_values: true   # Log connectivity metrics
+  save_adjacency_matrices: false  # Set to true if you need adjacency matrices
+  log_only_uavs: true        # Only log UAV data (saves space)
+
+vis_params:
+  render_type: nav               # rendering mode (nav, explore)
+  show_old_path: 10000       # show the history of state
+  plot_limits: None
