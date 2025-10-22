@@ -50,7 +50,7 @@ Look at the available config.yaml files in the `mrs_connectivity_perch/tests/` d
 Use the figure below as a reference to understand the symbols used:
 
 <div align="center">
-  <img src="media/overview.png" alt="APP UI" width="350">
+  <img src="media/overview.png" alt="APP UI" width="400">
 </div>
 
 ---
