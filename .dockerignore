@@ -10,12 +10,12 @@ docker-compose.yml
 __pycache__
 .idea/
 
-/hero_sim/tests/data/
-/hero_sim/tests/As/
+/mrs_connectivity_perch/tests/data/
+/mrs_connectivity_perch/tests/As/
 
 /env/
 /venv/
-hero_sim.egg-info/
+mrs_connectivity_perch.egg-info/
 
 .env
 README_dynamic_system.md

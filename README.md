@@ -2,7 +2,10 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10-green)
 
-This repository provides a Gymnasium-based simulation environment developed for our work on “Perch-Aware Decentralized Control for Extending the Lifetime of UAV Communication Networks” [<a href="#ref1">1</a>].
+This repository contains a Gymnasium-based simulation environment developed for our work “Perch-Aware Decentralized Control for Extending the Lifetime of UAV Communication Networks,” accepted for presentation at the IEEE International Symposium on Multi-Robot and Multi-Agent Systems (IEEE MRS 2025) in Singapore [<a href="#ref1">1</a>].
+
+The associated video demonstration is available [here](https://youtu.be/u8JEi_p27BQ).
+
 
 ## Problem Overview
 
